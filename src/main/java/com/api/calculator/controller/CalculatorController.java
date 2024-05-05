@@ -39,4 +39,13 @@ public class CalculatorController {
         int quotient = a / b;
         return "The quotient of " + a + " and " + b + " is " + quotient;        
     }
+
+    @GetMapping("/power")
+    public String power(@RequestParam int a, @RequestParam int b) {
+        int result = 1;
+        for (int i = 0; i < b; i++) {
+            result *= a;
+        }
+        return a + " raised to the power of " + b + " is " + result;
+    }
 }
